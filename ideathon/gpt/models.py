@@ -7,9 +7,6 @@ class Character(models.Model):
     situation = models.CharField(max_length=255)  # 상황 설명을 저장
     language = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.character_name
-
 class GptAnswer(models.Model):
     character = models.ForeignKey(Character, on_delete=models.CASCADE)  # Character 모델과 연결
     response_content = models.TextField()  # GPT가 생성한 응답 내용

@@ -84,10 +84,15 @@ WSGI_APPLICATION = 'ideathon.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'gptgpt',
+        'USER': 'root',
+        'PASSWORD': '12345678',
+        'HOST': 'db',  # 또는 MySQL 서버의 IP 주소
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation

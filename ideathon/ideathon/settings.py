@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', # CORS 관련 추가 (가장 상단에 위치)
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,8 +78,28 @@ TEMPLATES = [
     },
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True #(모든 포트 허용)
+
+
 WSGI_APPLICATION = 'ideathon.wsgi.application'
 
+CORS_ALLOW_METHODS = (
+"DELETE",
+"GET",
+"OPTIONS",
+"PATCH",
+"POST",
+"PUT",
+)
+
+CORS_ALLOW_HEADERS = (
+"accept",
+"authorization",
+"content-type",
+"user-agent",
+"x-csrftoken",
+"x-requested-with",
+)
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases

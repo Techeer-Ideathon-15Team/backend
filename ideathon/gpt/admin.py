@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import GptAnswer, Character
 
-# Register your models here.
+admin.site.register(GptAnswer)
+admin.site.register(Character)
